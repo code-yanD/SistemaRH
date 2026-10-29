@@ -1,0 +1,105 @@
+
+<div class="flex min-h-[80vh] items-center justify-center bg-[#151515] p-4">
+  <div class="w-full max-w-md rounded-xl border border-[#a83232]/30 bg-[#1c1c1c] p-6 shadow-2xl shadow-black/40 sm:p-8">
+
+    <div class="mb-8 text-center">
+      <h1 class="text-3xl font-bold tracking-[0.12em] text-[#d45a5a]">
+        Criar conta
+      </h1>
+
+      <p class="mt-2 text-sm text-gray-400">
+        Cadastre-se no SistemaRH
+      </p>
+
+      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-[#a83232]"></div>
+    </div>
+
+    <form class="space-y-4">
+      <div>
+        <label
+          for="nome"
+          class="mb-2 block text-sm font-medium text-[#d45a5a]"
+        >
+          Nome
+        </label>
+
+        <input
+          id="nome"
+          name="nome"
+          type="text"
+          placeholder="Seu nome"
+          class="w-full rounded-lg border border-[#a83232]/30 bg-[#151515] px-4 py-3 text-gray-100 placeholder-gray-500 outline-none transition duration-300 focus:border-[#c44747] focus:ring-2 focus:ring-[#a83232]/20"
+        />
+      </div>
+
+      <div>
+        <label
+          for="email-cadastro"
+          class="mb-2 block text-sm font-medium text-[#d45a5a]"
+        >
+          E-mail
+        </label>
+
+        <input
+          id="email-cadastro"
+          name="email"
+          type="email"
+          placeholder="seu@email.com"
+          class="w-full rounded-lg border border-[#a83232]/30 bg-[#151515] px-4 py-3 text-gray-100 placeholder-gray-500 outline-none transition duration-300 focus:border-[#c44747] focus:ring-2 focus:ring-[#a83232]/20"
+        />
+      </div>
+
+      <div>
+        <label
+          for="senha-cadastro"
+          class="mb-2 block text-sm font-medium text-[#d45a5a]"
+        >
+          Senha
+        </label>
+
+        <input
+          id="senha-cadastro"
+          name="senha"
+          type="password"
+          placeholder="Crie uma senha"
+          class="w-full rounded-lg border border-[#a83232]/30 bg-[#151515] px-4 py-3 text-gray-100 placeholder-gray-500 outline-none transition duration-300 focus:border-[#c44747] focus:ring-2 focus:ring-[#a83232]/20"
+        />
+      </div>
+
+      <div>
+        <label
+          for="confirmar-senha"
+          class="mb-2 block text-sm font-medium text-[#d45a5a]"
+        >
+          Confirmar senha
+        </label>
+
+        <input
+          id="confirmar-senha"
+          name="confirmarSenha"
+          type="password"
+          placeholder="Repita sua senha"
+          class="w-full rounded-lg border border-[#a83232]/30 bg-[#151515] px-4 py-3 text-gray-100 placeholder-gray-500 outline-none transition duration-300 focus:border-[#c44747] focus:ring-2 focus:ring-[#a83232]/20"
+        />
+      </div>
+
+      <button
+        type="button"
+        class="w-full rounded-lg border border-[#a83232] bg-[#a83232] px-4 py-3 font-semibold text-white transition duration-300 hover:border-[#c44747] hover:bg-[#c44747] focus:outline-none focus:ring-2 focus:ring-[#c44747]/40 focus:ring-offset-2 focus:ring-offset-[#1c1c1c]"
+      >
+        Cadastrar
+      </button>
+    </form>
+
+    <p class="mt-6 text-center text-sm text-gray-400">
+      Já possui uma conta?
+      <a
+        routerLink="/login"
+        class="ml-1 font-medium text-[#d45a5a] transition-colors duration-300 hover:text-[#e87979] hover:underline"
+      >
+        Entre
+      </a>
+    </p>
+
+  </div>
+</div>
