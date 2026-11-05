@@ -1,4 +1,6 @@
 
+
+
 <div class="min-h-screen bg-[#151515] text-[#e5e5e5]">
 
   <nav class="border-b border-[#a83232]/30 bg-[#1c1c1c] shadow-md shadow-black/20">
@@ -13,55 +15,70 @@
 
       <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
 
-        <a
-          routerLink="/login"
-          routerLinkActive="border-[#c44747] text-[#e87979]"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
-        >
-          Login
-        </a>
+        @if (!auth.estaLogado()) {
+          <a
+            routerLink="/login"
+            routerLinkActive="border-[#c44747] text-[#e87979]"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
+          >
+            Login
+          </a>
+        }
 
-        <a
-          routerLink="/cadastro"
-          routerLinkActive="border-[#c44747] text-[#e87979]"
-          class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
-        >
-          Cadastro
-        </a>
+        @if (!auth.estaLogado()) {
+          <a
+            routerLink="/cadastro"
+            routerLinkActive="border-[#c44747] text-[#e87979]"
+            class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
+          >
+            Cadastro
+          </a>
+        }
 
-        <a
-          routerLink="/funcionarios"
-          routerLinkActive="border-[#c44747] text-[#e87979]"
-          class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
-        >
-          Funcionários
-        </a>
+        @if (auth.estaLogado()) {
+          <a
+            routerLink="/funcionarios"
+            routerLinkActive="border-[#c44747] text-[#e87979]"
+            class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
+          >
+            Funcionários
+          </a>
+      }
+        @if (auth.estaLogado()) {
+          <a
+            routerLink="/funcionarios/novo"
+            routerLinkActive="border-[#c44747] text-[#e87979]"
+            class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
+          >
+            Novo funcionário
+          </a>
+        }
 
-        <a
-          routerLink="/funcionarios/novo"
-          routerLinkActive="border-[#c44747] text-[#e87979]"
-          class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
-        >
-          Novo funcionário
-        </a>
-
-        <a
-          routerLink="/enderecos"
-          routerLinkActive="border-[#c44747] text-[#e87979]"
-          class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
-        >
-          Endereços
-        </a>
-
-        <a
-          routerLink="/contatos"
-          routerLinkActive="border-[#c44747] text-[#e87979]"
-          class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
-        >
-          Contatos
-        </a>
-
+        @if (auth.estaLogado()) {
+          <a
+            routerLink="/enderecos"
+            routerLinkActive="border-[#c44747] text-[#e87979]"
+            class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
+          >
+            Endereços
+          </a>
+        }
+        @if (auth.estaLogado()) {
+          <a
+            routerLink="/contatos"
+            routerLinkActive="border-[#c44747] text-[#e87979]"
+            class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]"
+          >
+            Contatos
+          </a>
+        }
+        @if (auth.estaLogado()) {
+          <button (click)="auth.logout()"
+          class="border-b-2 border-transparent py-2 text-sm font-medium text-[#c9c9c9] transition-all duration-300 hover:border-[#a83232]/70 hover:text-[#e87979]">
+          Sair
+          </button>
+        }
       </div>
     </div>
   </nav>
