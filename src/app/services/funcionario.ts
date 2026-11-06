@@ -13,4 +13,8 @@ export class FuncionarioService {
   listar(): Observable<Funcionario[]> {
     return this.http.get<Funcionario[]>(`${environment.apiUrl}/usuarios`);
   }
+
+  deletar(id: number): Observable<void>{
+    return this.http.delete<void>(`${environment.apiUrl}/usuarios/${id}`);
+  }
 }
